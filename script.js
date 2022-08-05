@@ -76,7 +76,7 @@
         parameterCount = parameters.length;
         for (i = 0; i < parameterCount; i++) {
 
-            color = F7A8B8;
+            color = parameters[i][0];
             size = parameters[i][1];
 
             materials[i] = new THREE.PointCloudMaterial({
