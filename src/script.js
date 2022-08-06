@@ -46,7 +46,6 @@
         geometry = new THREE.Geometry(); 
         particleCount = 10000; 
 
-        var tex = new THREE.TextureLoader().load("https://threejs.org/examples/textures/sprites/disc.png");
         for (i = 0; i < particleCount; i++) {
 
             var vertex = new THREE.Vector3();
@@ -55,7 +54,6 @@
             vertex.z = Math.random() * 2000 - 1000;
             geometry.vertices.push(vertex);
         }
-
 
         parameters = [
             [
@@ -74,6 +72,9 @@
                 [0.80, 1, 0.5], 1
             ]
         ];
+        
+        var tex = new THREE.TextureLoader().load("https://threejs.org/examples/textures/sprites/disc.png");
+
         parameterCount = parameters.length;
         for (i = 0; i < parameterCount; i++) {
 
@@ -85,7 +86,7 @@
                 map: tex
             });
 
-            particles = new THREE.PointCloud(geometry, materials[i]);
+            particles = new THREE.Points(geometry, materials[i]);
 
             particles.rotation.x = Math.random() * 6;
             particles.rotation.y = Math.random() * 6;
