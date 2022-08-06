@@ -86,7 +86,7 @@
                 map: tex
             });
 
-            particles = new THREE.Points(geometry, materials[i]);
+            particles = new THREE.PointsMaterial(geometry, materials[i]);
 
             particles.rotation.x = Math.random() * 6;
             particles.rotation.y = Math.random() * 6;
