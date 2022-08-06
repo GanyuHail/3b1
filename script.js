@@ -44,8 +44,9 @@
         document.body.style.overflow = 'hidden';
 
         geometry = new THREE.Geometry(); 
-        particleCount = 20000; 
+        particleCount = 10000; 
 
+        var tex = new THREE.TextureLoader().load("https://threejs.org/examples/textures/sprites/disc.png");
         for (i = 0; i < particleCount; i++) {
 
             var vertex = new THREE.Vector3();
@@ -80,7 +81,8 @@
             size = parameters[i][1];
 
             materials[i] = new THREE.PointCloudMaterial({
-                size: size
+                size: size,
+                map: tex
             });
 
             particles = new THREE.PointCloud(geometry, materials[i]);
